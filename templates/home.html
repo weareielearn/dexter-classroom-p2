@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>dexter Classroom</title>
 </head>
+
 <body>
-    <h1>Hello World</h1>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>dexter Classroom</title>
+        <!-- css files -->
+        <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/material.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="../static/css/home.css">
+    </head>
+
+    <body class="bg-light">
+
+        <div id="main-content" class="d-block">
+            <div class="home_bg">
+                <a href="/">
+                    <h1 class="display-3 text-white text-center"><b class="font-weight-bold">dexter</b>
+                        Classroom</h1>
+                </a>
+            </div>
+            <div class="p-5">
+                <form class="mdl-card mdl-shadow--8dp m-auto p-4">
+                    <h3 class="h3 mdl-color-text--accent text-center mt-0">Sign In</h3>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input mb-2" type="text">
+                        <label class="mdl-textfield__label">User id</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input mb-2" type="password">
+                        <label class="mdl-textfield__label">Password</label>
+                    </div>
+                    <p><a href="/forgot">Forgot Password ?</a></p>
+                    <button type="button" class="mdl-button--colored mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Continue</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- firebase init -->
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+        <script>
+            var config = {
+                apiKey: "AIzaSyAANPqigBVAXMgbhnT317TYHYEN5fEb_G0",
+                authDomain: "dexter-classroom-p2.firebaseapp.com",
+                databaseURL: "https://dexter-classroom-p2.firebaseio.com",
+                projectId: "dexter-classroom-p2",
+                storageBucket: "dexter-classroom-p2.appspot.com",
+                messagingSenderId: "743944977153"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <!-- js files -->
+        <script src="../static/js/jquery.js"></script>
+        <script src="../static/js/bootstrap.bundle.js"></script>
+        <script src="../static/js/material.js"></script>
+    </body>
+
+    </html>
 </body>
+
 </html>
