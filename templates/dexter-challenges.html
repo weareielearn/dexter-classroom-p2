@@ -17,6 +17,26 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         {% include 'navigation.html' %}
     </div>
+    <div class="container" style="padding-top: 40px;">
+        <h1 class="h1 pt-4 pb-3 text-center">Dexter Challenges</h1>
+        <div class="row">
+            {% for x in range(0,8) %}
+            <div class="col-md-4 p-4">
+                <!--  -->
+                <div class="mdl-card mdl-shadow--8dp mdl-color--accent w-100">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h4 class="h4 mdl-color-text--white">Heading tes tingtesting adsadsad asdsad testing</h4>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="text-white mdl-button mdl-color--primary mdl-js-button mdl-js-ripple-effect float-right">Take
+                            Challenge</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
 
     <!-- js files -->
     <script src="../static/js/jquery.js"></script>
