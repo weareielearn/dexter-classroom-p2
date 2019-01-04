@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dexter Classroom</title>
+    <!-- css files -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/material.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../static/css/dash.css">
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        {% include 'navigation.html' %}
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <h1>dexter-ground</h1>
+            </div>
+        </main>
+    </div>
+
+    <!-- firebase init -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyAANPqigBVAXMgbhnT317TYHYEN5fEb_G0",
+            authDomain: "dexter-classroom-p2.firebaseapp.com",
+            databaseURL: "https://dexter-classroom-p2.firebaseio.com",
+            projectId: "dexter-classroom-p2",
+            storageBucket: "dexter-classroom-p2.appspot.com",
+            messagingSenderId: "743944977153"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!-- js files -->
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.bundle.js"></script>
+    <script src="../static/js/material.js"></script>
+</body>
+
+</html>

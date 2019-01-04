@@ -42,8 +42,21 @@ def signout():
 def dexter_challenges():
     if 'dexter_classroom_session' not in session:
         return redirect('/')
-    d_challenges = ChallengeOperations.get_user_dexter_community_challenges(session['dexter_classroom_session']['community'][4:])
+    d_challenges = ChallengeOperations.get_user_dexter_community_challenges(session['dexter_classroom_session']
+                                                                            ['community'][4:])
     return render_template('dexter-challenges.html', challenges=d_challenges)
+
+
+@app.route('/dexter-ground', methods=['POST', 'GET'])
+def dexter_ground():
+    if 'dexter_classroom_session' not in session:
+        return redirect('/')
+    if request.method == 'POST':
+        d_challenges = ChallengeOperations.get_user_dexter_community_challenges(session['dexter_classroom_session']
+                                                                                ['community'][4:])
+        return render_template('dexter-ground.html', challenges=d_challenges)
+    return redirect('/dexter-challenges')
+
 
 
 @app.route('/diy-challenges')

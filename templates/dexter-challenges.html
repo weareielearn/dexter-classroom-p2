@@ -24,15 +24,16 @@
                         {% for x in challenges %}
                         <div class="col-md-4 pr-4 pl-4 pt-4 pb-0">
                             <!--  -->
-                            <div class="mdl-card mdl-shadow--8dp mdl-color--grey w-100">
+                            <form method="POST" action="./dexter-ground" class="mdl-card mdl-shadow--8dp mdl-color--grey w-100">
                                 <div class="mdl-card__title mdl-card--expand">
                                     <h4 class="h4 mdl-color-text--white">{{ x }}</h4>
+                                    <input class="d-none" name="topic" value="{{ x }}">
                                 </div>
                                 <div class="mdl-card__actions mdl-card--border">
-                                    <a class="text-white mdl-button--raised mdl-button mdl-color--accent mdl-js-button mdl-js-ripple-effect float-right">Take
-                                        Challenge</a>
+                                    <button class="text-white mdl-button--raised mdl-button mdl-color--accent mdl-js-button mdl-js-ripple-effect float-right">Take
+                                        Challenge</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         {% endfor %}
                     </div>
