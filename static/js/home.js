@@ -3,6 +3,7 @@ var userid = document.getElementById("userid");
 var password = document.getElementById("password");
 var signin = document.getElementById("signin");
 var eye = document.getElementById("eye");
+var signinForm = document.getElementById("signinForm");
 
 // listeners
 signin.addEventListener("click", signinClick);
@@ -21,7 +22,7 @@ function signinClick() {
                 if (snapshot.exists() && snapshot.val().password === p) {
                     // successfull signin
                     signinStop();
-                    $("#signinForm").submit()
+                    signinForm.submit()
                     // add action later
                 } else {
                     alert("invalid user id and password");
@@ -51,12 +52,12 @@ function signinStop() {
 
 function eyeClick() {
     var e = eye.innerHTML;
-    if(e==="visibility") {
+    if (e === "visibility") {
         eye.innerHTML = "visibility_off";
-        password.type="text"
+        password.type = "text"
     }
     else {
         eye.innerHTML = "visibility";
-        password.type="password"
+        password.type = "password"
     }
 }
