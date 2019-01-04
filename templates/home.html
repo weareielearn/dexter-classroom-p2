@@ -34,18 +34,19 @@
                 </a>
             </div>
             <div class="pb-5">
-                <form class="mdl-card mdl-shadow--8dp m-auto p-4">
+                <form action="./" method="POST" id="signinForm" class="mdl-card mdl-shadow--8dp m-auto p-4">
                     <h3 class="h3 mdl-color-text--accent text-center mt-0">Sign In</h3>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input mb-2" type="text">
+                        <input id="userid" class="mdl-textfield__input mb-2 text-uppercase" type="text" name="userid">
                         <label class="mdl-textfield__label">User id</label>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input mb-2" type="password">
+                        <input id="password" class="mdl-textfield__input mb-2 pr-5" type="password">
                         <label class="mdl-textfield__label">Password</label>
+                        <i id="eye" class="material-icons mdl-color-text--accent float-right" style="margin-top: -35px; margin-right: 8px;">visibility</i>
                     </div>
                     <p class="text-right"><a href="/help">Help ?</a></p>
-                    <button type="button" class="mdl-button--colored mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Continue</button>
+                    <button id="signin" type="button" class="mdl-button--colored mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Continue</button>
                 </form>
             </div>
         </div>
@@ -69,6 +70,7 @@
         <script src="../static/js/jquery.js"></script>
         <script src="../static/js/bootstrap.bundle.js"></script>
         <script src="../static/js/material.js"></script>
+        <script src="../static/js/home.js"></script>
     </body>
 
     </html>

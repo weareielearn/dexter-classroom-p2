@@ -17,3 +17,7 @@ body, html {
 a:hover, a:active, a:focus, a {
     text-decoration: none;
 }
+
+#eye:hover, #eye:active #eye:focus {
+    cursor: pointer;
+}
