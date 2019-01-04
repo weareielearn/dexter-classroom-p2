@@ -9,7 +9,6 @@ deleteBtn.addEventListener('click', deleteOp);
 function deleteOp() {
     deleteBtn.disabled = true;
     firebase.database().ref("users/" + userid).remove().then(function () {
-        alert("deleted");
         deleteBtn.disabled = false;
         window.location = "/signout";
     })

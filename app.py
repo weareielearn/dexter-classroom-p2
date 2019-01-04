@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, session, redirect
-from support import SignInOperations
+from support import SignInOperations, ChallengeOperations
 
 app = Flask(__name__)
 app.secret_key = 'dexter-classroom-secret-key'
@@ -42,7 +42,8 @@ def signout():
 def dexter_challenges():
     if 'dexter_classroom_session' not in session:
         return redirect('/')
-    return render_template('dexter-challenges.html')
+    d_challenges = ChallengeOperations.get_user_dexter_community_challenges(session['dexter_classroom_session']['community'][4:])
+    return render_template('dexter-challenges.html', challenges=d_challenges)
 
 
 @app.route('/diy-challenges')
