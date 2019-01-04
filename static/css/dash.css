@@ -19,3 +19,7 @@ a:hover, a:active, a:focus, a {
 button:hover, button:active, button:focus {
     outline: none;
 }
+
+.underline:after {
+    background-color: transparent;
+}

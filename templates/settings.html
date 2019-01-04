@@ -17,26 +17,80 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         {% include 'navigation.html' %}
     </div>
-    <div class="container" align="center" style="padding-top: 60px;">
-        <h1 class="h1">Settings</h1>
+    <div class="container" align="center" style="padding-top: 40px;">
+        <h1 class="h1 pt-4 pb-3">Settings</h1>
         <div class="p-0 pl-sm-5">
             <!--  -->
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
-                <input readonly class="mdl-textfield__input" value={{ session['dexter_classroom_session']['name'] }}>
+                <input id="userid" readonly class="mdl-textfield__input" value="{{ session['dexter_classroom_session']['userid'] }}">
+                <label class="mdl-textfield__label underline">User id</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                <input readonly class="mdl-textfield__input" value="{{ session['dexter_classroom_session']['name'] }}">
                 <label class="mdl-textfield__label underline">Username</label>
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
-                <input readonly class="mdl-textfield__input" value={{ session['dexter_classroom_session']['name'] }}>
-                <label class="mdl-textfield__label underline">Username</label>
+                <input readonly class="mdl-textfield__input" value="{{ session['dexter_classroom_session']['dob'] }}">
+                <label class="mdl-textfield__label underline">Date of birth</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                <input readonly class="mdl-textfield__input" value="{{ session['dexter_classroom_session']['community'] }}">
+                <label class="mdl-textfield__label underline">Community</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                <input readonly class="mdl-textfield__input" value="{{ session['dexter_classroom_session']['password'] }}">
+                <label class="mdl-textfield__label underline">Password</label>
+            </div>
+            <button data-toggle="modal" data-target="#ModalCenter" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary mdl-js-ripple-effect">Delete
+                Account</button>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Warning</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deleting Your account will remove all your data and progress. This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="mdl-button mdl-button--accent" data-dismiss="modal">Close</button>
+                    <button id="delete_btn" type="button" class="mdl-button mdl-button--primary">Delete Account</button>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- firebase init -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyAANPqigBVAXMgbhnT317TYHYEN5fEb_G0",
+            authDomain: "dexter-classroom-p2.firebaseapp.com",
+            databaseURL: "https://dexter-classroom-p2.firebaseio.com",
+            projectId: "dexter-classroom-p2",
+            storageBucket: "dexter-classroom-p2.appspot.com",
+            messagingSenderId: "743944977153"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!-- js files -->
     <!-- js files -->
     <script src="../static/js/jquery.js"></script>
     <script src="../static/js/bootstrap.bundle.js"></script>
     <script src="../static/js/material.js"></script>
+    <script src="../static/js/settings.js"></script>
 </body>
 
 </html>
