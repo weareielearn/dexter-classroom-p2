@@ -16,13 +16,36 @@
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         {% include 'navigation.html' %}
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="container">
+                    <h1 class="h1 text-center">Dexter Challenges</h1>
+                    <div class="row">
+                        {% for x in challenges %}
+                        <div class="col-md-4 pr-4 pl-4 pt-4 pb-0">
+                            <!--  -->
+                            <div class="mdl-card mdl-shadow--8dp mdl-color--grey w-100">
+                                <div class="mdl-card__title mdl-card--expand">
+                                    <h4 class="h4 mdl-color-text--white">{{ x }}</h4>
+                                </div>
+                                <div class="mdl-card__actions mdl-card--border">
+                                    <a class="text-white mdl-button--raised mdl-button mdl-color--accent mdl-js-button mdl-js-ripple-effect float-right">Take
+                                        Challenge</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-    <div class="container" style="padding-top: 40px;">
+
+    <!-- <div class="container" style="padding-top: 40px;">
         <h1 class="h1 pt-4 mb-0 text-center">Dexter Challenges</h1>
         <div class="row">
             {% for x in challenges %}
             <div class="col-md-4 pr-4 pl-4 pt-4 pb-0">
-                <!--  -->
                 <div class="mdl-card mdl-shadow--8dp mdl-color--grey w-100">
                     <div class="mdl-card__title mdl-card--expand">
                         <h4 class="h4 mdl-color-text--white">{{ x }}</h4>
@@ -35,7 +58,7 @@
             </div>
             {% endfor %}
         </div>
-    </div>
+    </div> -->
 
     <!-- firebase init -->
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
