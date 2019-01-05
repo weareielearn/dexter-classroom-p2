@@ -23,3 +23,13 @@ button:hover, button:active, button:focus {
 .underline:after {
     background-color: transparent;
 }
+
+.cwidth {
+    width: 75%;
+}
+
+@media (max-width: 768px) { 
+    .cwidth {
+        width: 100%;
+    }
+ }

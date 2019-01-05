@@ -18,7 +18,64 @@
         {% include 'navigation.html' %}
         <main class="mdl-layout__content">
             <div class="page-content">
-                <h1>dexter-ground</h1>
+                <div class="container mb-5" align="center">
+                    <h1 class="h1 text-center mb-4 pb-2">Dexter Ground</h1>
+
+                    <div id="challengeCard" class="mb-4 carousel slide mdl-card mdl-shadow--8dp text-center cwidth p-4"
+                        data-wrap="false" data-interval="false" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h2 class="h2">{{ c_name }}</h2>
+                                <p class="text-justify">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ challenge['intro'] }}</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="h2">Engage</h2>
+                                <p class="text-justify">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ challenge['engage'] }}</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="h2">Explore</h2>
+                                <iframe class="w-100 mt-4 mb-4" height="300" src="{{ challenge['explore']['media'] }}"
+                                    frameborder="0" allowfullscreen>
+                                </iframe>
+                                <p class="text-justify">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ challenge['explore']['intro'] }}</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="h2">Explain</h2>
+                                <p class="text-justify">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ challenge['explain'] }}</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="h2">Elaborate</h2>
+                                <p class="text-justify">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ challenge['elaborate'] }}</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="h2">Evaluate</h2>
+                                <p class="text-justify">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations on completing the
+                                    challenge. Now inorder to test your knowledge, we need to evaluate your
+                                    understanding. Take the evaluation test given below. By the end of evaluation your progress will be saved.</p>
+                                <a href="{{ challenge['evaluate'] }}" class="mdl-button--primary mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Take evaluation test</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row cwidth">
+                        <div>
+                            <a class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                                href="#challengeCard" role="button" data-slide="prev">
+                                Previous
+                            </a>
+                            <a class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                                href="#challengeCard" role="button" data-slide="next">
+                                Next
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </main>
     </div>

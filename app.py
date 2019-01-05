@@ -52,11 +52,12 @@ def dexter_ground():
     if 'dexter_classroom_session' not in session:
         return redirect('/')
     if request.method == 'POST':
+        ch = request.form["topic"]
+
         d_challenges = ChallengeOperations.get_user_dexter_community_challenges(session['dexter_classroom_session']
                                                                                 ['community'][4:])
-        return render_template('dexter-ground.html', challenges=d_challenges)
+        return render_template('dexter-ground.html', challenge=d_challenges[ch], c_name=ch)
     return redirect('/dexter-challenges')
-
 
 
 @app.route('/diy-challenges')
