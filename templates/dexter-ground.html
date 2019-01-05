@@ -21,7 +21,30 @@
                 <div class="container mb-5" align="center">
                     <h1 class="h1 text-center mb-4 pb-2">Dexter Ground</h1>
 
-                    <div id="challengeCard" class="mb-4 carousel slide mdl-card mdl-shadow--8dp text-center cwidth p-4"
+                    <div class="row cwidth">
+                        <div class="col-6 p-0" align="left">
+                            <button class="mdl-button mdl-button--colored" data-toggle="modal" data-target="#ModalCenter">Quit
+                                challenge
+                            </button>
+                        </div>
+                        <div class="col-6 p-0" align="right">
+                            <div>
+                                <a id="prev" class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect p-0"
+                                    href="#challengeCard" role="button" data-slide="prev">
+                                    <i class="material-icons">
+                                        keyboard_arrow_left
+                                    </i>
+                                </a>
+                                <a id="next" class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect p-0"
+                                    href="#challengeCard" role="button" data-slide="next">
+                                    <i class="material-icons">
+                                        keyboard_arrow_right
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="challengeCard" class="mt-4 carousel slide mdl-card mdl-shadow--8dp text-center cwidth p-4"
                         data-wrap="false" data-interval="false" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -36,7 +59,7 @@
                             </div>
                             <div class="carousel-item">
                                 <h2 class="h2">Explore</h2>
-                                <iframe class="w-100 mt-4 mb-4" height="300" src="{{ challenge['explore']['media'] }}"
+                                <iframe class="mt-4 mb-4 cwidth_f mx-auto" src="{{ challenge['explore']['media'] }}"
                                     frameborder="0" allowfullscreen>
                                 </iframe>
                                 <p class="text-justify">
@@ -55,29 +78,57 @@
                             <div class="carousel-item">
                                 <h2 class="h2">Evaluate</h2>
                                 <p class="text-justify">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations on completing the
-                                    challenge. Now inorder to test your knowledge, we need to evaluate your
-                                    understanding. Take the evaluation test given below. By the end of evaluation your progress will be saved.</p>
-                                <a href="{{ challenge['evaluate'] }}" class="mdl-button--primary mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Take evaluation test</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations on comming to the
+                                    end. Now inorder to test your knowledge and to complete the challenge, we need to
+                                    evaluate your understanding. Take the evaluation test given below. By the
+                                    end of evaluation your progress will be saved.</p>
+                                <a href="{{ challenge['evaluate'] }}" class="mdl-button--primary mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Take
+                                    evaluation test</a>
                             </div>
                         </div>
                     </div>
-                    <div class="row cwidth">
+                    <!-- <div class="row cwidth">
                         <div>
-                            <a class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                            <a id="prev" class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect p-0"
                                 href="#challengeCard" role="button" data-slide="prev">
-                                Previous
+                                <i class="material-icons">
+                                    keyboard_arrow_left
+                                </i>
                             </a>
-                            <a class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                            <a id="next" class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect p-0"
                                 href="#challengeCard" role="button" data-slide="next">
-                                Next
+                                <i class="material-icons">
+                                    keyboard_arrow_right
+                                </i>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Warning</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You have not completed the challenge yet and your progress is not saved. Finsih the challenge to
+                    save your progress. If you go back, you will have to take the challenge from the beginning.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="mdl-button mdl-button--accent" data-dismiss="modal">Cancel</button>
+                    <button id="quit" type="button" class="mdl-button mdl-button--primary">Quit anyway</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- firebase init -->
@@ -99,6 +150,7 @@
     <script src="../static/js/jquery.js"></script>
     <script src="../static/js/bootstrap.bundle.js"></script>
     <script src="../static/js/material.js"></script>
+    <script src="../static/js/dexter-ground.js"></script>
 </body>
 
 </html>
