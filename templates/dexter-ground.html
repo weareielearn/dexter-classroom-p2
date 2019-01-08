@@ -49,34 +49,29 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <h2 class="h2">{{ c_name }}</h2>
-                                <p class="text-justify">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ challenge['intro'] }}</p>
+                                <p id="intro" class="text-justify"></p>
                             </div>
                             <div class="carousel-item">
-                                <h2 class="h2">Engage</h2>
-                                <p class="text-justify">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ challenge['engage'] }}</p>
+                                <h2 class="h2 text-left">Engage</h2>
+                                <p id="engage" class="text-justify"></p>
                             </div>
                             <div class="carousel-item">
-                                <h2 class="h2">Explore</h2>
+                                <h2 class="h2 text-left">Explore</h2>
                                 <iframe class="mt-4 mb-4 cwidth_f mx-auto" src="{{ challenge['explore']['media'] }}"
                                     frameborder="0" allowfullscreen>
                                 </iframe>
-                                <p class="text-justify">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ challenge['explore']['intro'] }}</p>
+                                <p id="explore" class="text-justify"></p>
                             </div>
                             <div class="carousel-item">
-                                <h2 class="h2">Explain</h2>
-                                <p class="text-justify">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ challenge['explain'] }}</p>
+                                <h2 class="h2 text-left">Explain</h2>
+                                <p id="explain" class="text-justify"></p>
                             </div>
                             <div class="carousel-item">
-                                <h2 class="h2">Elaborate</h2>
-                                <p class="text-justify">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ challenge['elaborate'] }}</p>
+                                <h2 class="h2 text-left">Elaborate</h2>
+                                <p id="elaborate" class="text-justify"></p>
                             </div>
                             <div class="carousel-item">
-                                <h2 class="h2">Evaluate</h2>
+                                <h2 class="h2 text-left">Evaluate</h2>
                                 <p class="text-justify">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations on comming to the
                                     end. Now inorder to test your knowledge and to complete the challenge, we need to
@@ -87,23 +82,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row cwidth">
-                        <div>
-                            <a id="prev" class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect p-0"
-                                href="#challengeCard" role="button" data-slide="prev">
-                                <i class="material-icons">
-                                    keyboard_arrow_left
-                                </i>
-                            </a>
-                            <a id="next" class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect p-0"
-                                href="#challengeCard" role="button" data-slide="next">
-                                <i class="material-icons">
-                                    keyboard_arrow_right
-                                </i>
-                            </a>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
         </main>
@@ -151,6 +129,14 @@
     <script src="../static/js/bootstrap.bundle.js"></script>
     <script src="../static/js/material.js"></script>
     <script src="../static/js/dexter-ground.js"></script>
+    <!-- page init -->
+    <script>
+        document.getElementById("intro").innerHTML = decodeHTMLEntities("{{ challenge['intro'] }}");
+        document.getElementById("engage").innerHTML = decodeHTMLEntities("{{ challenge['engage'] }}");
+        document.getElementById("explore").innerHTML = decodeHTMLEntities("{{ challenge['explore']['intro'] }}");
+        document.getElementById("explain").innerHTML = decodeHTMLEntities("{{ challenge['explain'] }}");
+        document.getElementById("elaborate").innerHTML = decodeHTMLEntities("{{ challenge['elaborate'] }}");
+    </script>
 </body>
 
 </html>
