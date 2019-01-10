@@ -9,25 +9,25 @@
         session['dexter_classroom_session']['name'] }}</span>
     <hr>
     <nav class="mdl-navigation pt-0">
-        {% if request.path == '/dexter-challenges': %}
-        <a class="mdl-navigation__link nav_link_active" href="/dexter-challenges">Dexter Challenges</a>
+        {% if request.path == '/dexter-box-projects': %}
+        <a class="mdl-navigation__link nav_link_active" href="/dexter-box-projects">Dexter Box Projects</a>
         {% else: %}
-        <a class="mdl-navigation__link" href="/dexter-challenges">Dexter Challenges</a>
+        <a class="mdl-navigation__link" href="/dexter-box-projects">Dexter Box Projects</a>
         {% endif %}
         {% if request.path == '/diy-challenges': %}
         <a class="mdl-navigation__link nav_link_active" href="/diy-challenges">DIY Challenges</a>
         {% else: %}
         <a class="mdl-navigation__link" href="/diy-challenges">DIY Challenges</a>
         {% endif %}
+        {% if request.path == '/science-calendar': %}
+        <a class="mdl-navigation__link nav_link_active" href="/science-calendar">Science Calendar</a>
+        {% else: %}
+        <a class="mdl-navigation__link" href="/science-calendar">Science Calendar</a>
+        {% endif %}
         {% if request.path == '/dashboard': %}
         <a class="mdl-navigation__link nav_link_active" href="/dashboard">Dashboard</a>
         {% else: %}
         <a class="mdl-navigation__link" href="/dashboard">Dashboard</a>
-        {% endif %}
-        {% if request.path == '/events': %}
-        <a class="mdl-navigation__link nav_link_active" href="/events">Events</a>
-        {% else: %}
-        <a class="mdl-navigation__link" href="/events">Events</a>
         {% endif %}
         {% if request.path == '/settings': %}
         <a class="mdl-navigation__link nav_link_active" href="/settings">Settings</a>

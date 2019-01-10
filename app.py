@@ -38,13 +38,13 @@ def signout():
     return redirect('/')
 
 
-@app.route('/dexter-challenges')
+@app.route('/dexter-box-projects')
 def dexter_challenges():
     if 'dexter_classroom_session' not in session:
         return redirect('/')
     d_challenges = ChallengeOperations.get_user_dexter_community_challenges(session['dexter_classroom_session']
                                                                             ['community'][4:])
-    return render_template('dexter-challenges.html', challenges=d_challenges)
+    return render_template('dexter-box-projects.html', challenges=d_challenges)
 
 
 @app.route('/dexter-ground', methods=['POST', 'GET'])
@@ -74,11 +74,11 @@ def dashboard():
     return render_template('dashboard.html')
 
 
-@app.route('/events')
+@app.route('/science-calendar')
 def events():
     if 'dexter_classroom_session' not in session:
         return redirect('/')
-    return render_template('events.html')
+    return render_template('science-calendar.html')
 
 
 @app.route('/settings')
