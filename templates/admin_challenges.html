@@ -64,10 +64,10 @@
             {% for x in range(1, slides+1) %}
             <div class="form-group">
                 <label>Slide {{x}} </label>
-                <textarea class="form-control" name="{{ 'Slide '+ x|string }}" rows="4"></textarea>
+                <textarea class="form-control" name="{{ 'slide'+ x|string }}" rows="4"></textarea>
             </div>
             {% endfor %}
-            <!-- <input class="d-none" type="text" name="type" value="challenge2"> -->
+            <input class="d-none" type="text" name="type" value="challengeFinal">
             <button id="signin" type="submit" class="mdl-button--colored mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Continue</button>
         </form>
     </div>
