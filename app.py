@@ -88,5 +88,26 @@ def settings():
     return render_template('settings.html')
 
 
+# admin section
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    if request.method == "POST":
+        type = request.form['type']
+        if type == 'admin_signin':
+            user = request.form['userid']
+            password = request.form['password']
+            if SignInOperations.getAdmin(user) == password:
+                return render_template('admin_challenges.html', type='challenge1')
+        if type == 'challenge':
+            ch_cr = {'ch_name': request.form['ch_name'],
+                     'ch_type': request.form['ch_type'],
+                     'comm': request.form['comm']}
+            slides = int(request.form['slides'])
+            return render_template('admin_challenges.html', type='challenge2', slides=slides, ch=ch_cr)
+        return redirect('/admin')
+    else:
+        return render_template('admin_login.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

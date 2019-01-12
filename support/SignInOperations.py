@@ -12,3 +12,7 @@ def get_user(userid):
     session_val = ref.child(userid).get()
     session_val['userid'] = userid
     return session_val
+
+
+def getAdmin(userid):
+    return db.reference(userid).get()

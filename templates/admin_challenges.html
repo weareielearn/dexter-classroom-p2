@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dexter Classroom</title>
+    <!-- css files -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/material.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body class="pt-5">
+    {% if type == 'challenge1': %}
+    <div class="container">
+        <form method='POST' action="./admin" class="mdl-shadow--8dp p-4">
+            <div class="form-group">
+                <label>Enter Challenge Name</label>
+                <input type="text" class="form-control" name="ch_name">
+            </div>
+            <div class="form-group">
+                <label>Select Challenge Type</label>
+                <select class="form-control" name="ch_type">
+                    <option disabled selected value> -- select an option -- </option>
+                    <option>dexter</option>
+                    <option>diy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Select Community</label>
+                <select class="form-control" name="comm">
+                    <option disabled selected value> -- select an option -- </option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Enter Number Of Slides</label>
+                <input type="text" class="form-control" name="slides">
+            </div>
+            <input class="d-none" type="text" name="type" value="challenge">
+            <button id="signin" type="submit" class="mdl-button--colored mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Continue</button>
+        </form>
+    </div>
+    {% elif type == 'challenge2': %}
+    <div class="container">
+        <form method='POST' action="./admin" class="mdl-shadow--8dp p-4">
+            <input class="d-none" type="text" name="slides" value="{{ slides }}">
+            <div class="form-group">
+                <label>Challenge Name</label>
+                <input readonly type="text" class="form-control" name="ch_name" value="{{ ch['ch_name'] }}">
+            </div>
+            <div class="form-group">
+                <label>Challenge Type</label>
+                <input readonly type="text" class="form-control" name="ch_type" value="{{ ch['ch_type'] }}">
+            </div>
+            <div class="form-group">
+                <label>Community</label>
+                <input readonly type="text" class="form-control" name="comm" value="{{ ch['comm'] }}">
+            </div>
+            {% for x in range(1, slides+1) %}
+            <div class="form-group">
+                <label>Slide {{x}} </label>
+                <textarea class="form-control" name="{{ 'Slide '+ x|string }}" rows="4"></textarea>
+            </div>
+            {% endfor %}
+            <!-- <input class="d-none" type="text" name="type" value="challenge2"> -->
+            <button id="signin" type="submit" class="mdl-button--colored mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Continue</button>
+        </form>
+    </div>
+    {% endif %}
+
+
+    <!-- js files -->
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.bundle.js"></script>
+    <script src="../static/js/material.js"></script>
+</body>
+
+</html>
