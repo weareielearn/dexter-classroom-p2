@@ -39,7 +39,7 @@ def signout():
 
 
 @app.route('/dexter-box-projects')
-def dexter_challenges():
+def dexter_box_projects():
     if 'dexter_classroom_session' not in session:
         return redirect('/')
     d_challenges = ChallengeOperations.get_user_dexter_community_challenges(session['dexter_classroom_session']
@@ -56,6 +56,7 @@ def dexter_ground():
 
         d_challenges = ChallengeOperations.get_user_dexter_community_challenges(session['dexter_classroom_session']
                                                                                 ['community'][4:])
+        print(d_challenges[ch])
         return render_template('dexter-ground.html', challenge=d_challenges[ch], c_name=ch)
     return redirect('/dexter-challenges')
 

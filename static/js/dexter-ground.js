@@ -46,7 +46,7 @@ function buttonCheck() {
 }
 
 function onQuit() {
-    window.location = "/dexter-challenges";
+    window.location = "/dexter-box-projects";
 }
 
 function decodeHTMLEntities(text) {
