@@ -111,7 +111,9 @@ def admin():
             slides = int(request.form['slides'])
             ch = {}
             for x in range(1, slides+1):
-                ch['slide'+str(x)] = request.form['slide'+str(x)].replace('\r\n', " ")
+                ch['slide'+str(x)] = request.form['slide'+str(x)].replace('\r\n', "")
+                if ch['slide'+str(x)] == "":
+                    del ch['slide'+str(x)]
             print(ch)
             ChallengeOperations.admin_create_challenge(ch_name, ch_type, comm, ch)
             return redirect('/admin')

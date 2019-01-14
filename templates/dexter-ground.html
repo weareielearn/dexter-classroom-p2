@@ -48,25 +48,13 @@
                         data-interval="false" data-ride="carousel">
                         <div id="carousel-inner" class="carousel-inner">
                             {% for t,x in challenge.items(): %}
-                            <div id="{{ t }}" class="carousel-item">
+                            <div id="{{ t }}" class="carousel-item text-left">
                             </div>
                             {% endfor %}
-                            <!-- <div class="carousel-item">
-                                <h2 class="h2 text-left">Explore</h2>
-                                <iframe class="mt-4 mb-4 cwidth_f mx-auto" src="{# challenge['explore']['media'] #}"
-                                    frameborder="0" allowfullscreen>
-                                </iframe>
-                                <img class="mb-4 img-fluid rounded mx-auto d-block" src="https://firebasestorage.googleapis.com/v0/b/dexter-classroom-p2.appspot.com/o/challenges%2Fdexter%2F1%2Felectricity%26circuits.jpg?alt=media&token=86cce2d0-3f3f-4da6-9834-2779507f091c">
-                                <p id="explore" class="text-left"></p>
-                            </div>
-                            <div class="carousel-item">
-                                <h2 class="h2 text-left">Explain</h2>
-                                <p id="explain" class="text-left"></p>
-                            </div>
-                            <div class="carousel-item">
-                                <h2 class="h2 text-left">Extend</h2>
-                                <p id="Extend" class="text-left"></p>
-                            </div> -->
+                            <!--
+                                <iframe class="mt-4 mb-4 cwidth_f mx-auto" src="" frameborder="0" allowfullscreen></iframe>
+                                <img class="img-fluid rounded mx-auto d-block" src="">
+                            -->
                             <div id="eval" class="carousel-item">
                                 <h2 class="h2 text-left">Evaluate</h2>
                                 <p class="text-left">
@@ -136,7 +124,6 @@
     {% for t,x in challenge.items(): %}
     <script>
         document.getElementById("{{t}}").innerHTML = decodeHTMLEntities("{{x}}");
-        alert(decodeHTMLEntities("{{x}}"));
     </script>
     {% endfor %}
 </body>
