@@ -56,8 +56,7 @@ def dexter_ground():
 
         d_challenges = ChallengeOperations.get_user_dexter_community_challenges(session['dexter_classroom_session']
                                                                                 ['community'][4:])
-        print(d_challenges[ch])
-        return render_template('dexter-ground.html', challenge=d_challenges[ch], c_name=ch)
+        return render_template('dexter-ground.html', challenge=d_challenges[ch], c_name=ch, cha_len=len(d_challenges[ch]))
     return redirect('/dexter-challenges')
 
 
@@ -112,7 +111,7 @@ def admin():
             slides = int(request.form['slides'])
             ch = {}
             for x in range(1, slides+1):
-                ch['slide'+str(x)] = request.form['slide'+str(x)].replace(' ', "").replace('\n', "").replace("\r", "")
+                ch['slide'+str(x)] = request.form['slide'+str(x)].replace('\r\n', " ")
             print(ch)
             ChallengeOperations.admin_create_challenge(ch_name, ch_type, comm, ch)
             return redirect('/admin')

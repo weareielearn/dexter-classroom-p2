@@ -12,7 +12,8 @@ var entities = {
     'lt': '<',
     'gt': '>',
     'nbsp': ' ',
-    'quot': '"'
+    'quot': '"',
+    '#34': '\"'
 }
 
 next.addEventListener("click", nextClick);
@@ -21,7 +22,7 @@ quit.addEventListener("click", onQuit);
 buttonCheck();
 
 function nextClick() {
-    if (count < 5) {
+    if (count < cha_len) {
         count++;
         buttonCheck();
     }
@@ -40,7 +41,7 @@ function buttonCheck() {
     if (count === 0) {
         prev.classList.add('mdl-button--disabled');
     }
-    if (count === 5) {
+    if (count === cha_len) {
         next.classList.add('mdl-button--disabled');
     }
 }

@@ -44,12 +44,11 @@
                             </div>
                         </div>
                     </div>
-                    <div id="challengeCard" class="mt-4 carousel slide mdl-card mdl-shadow--8dp text-center cwidth p-4"
-                        data-wrap="false" data-interval="false" data-ride="carousel">
+                    <div id="challengeCard" class="mt-4 carousel slide mdl-card mdl-shadow--8dp cwidth p-4" data-wrap="false"
+                        data-interval="false" data-ride="carousel">
                         <div id="carousel-inner" class="carousel-inner">
                             {% for t,x in challenge.items(): %}
                             <div id="{{ t }}" class="carousel-item">
-                                {{ x }}
                             </div>
                             {% endfor %}
                             <!-- <div class="carousel-item">
@@ -67,17 +66,17 @@
                             <div class="carousel-item">
                                 <h2 class="h2 text-left">Extend</h2>
                                 <p id="Extend" class="text-left"></p>
-                            </div>
-                            <div class="carousel-item">
+                            </div> -->
+                            <div id="eval" class="carousel-item">
                                 <h2 class="h2 text-left">Evaluate</h2>
                                 <p class="text-left">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations on reaching the
                                     end. Now inorder to test your knowledge and to complete the challenge, we need to
                                     evaluate your understanding. Take the evaluation test given below. By the
                                     end of evaluation your progress will be saved.</p>
-                                <a href="{# challenge['evaluate'] #}" class="mdl-button--primary mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Take
+                                <a href="#" class="mdl-button--primary mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Take
                                     evaluation & finish</a>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,6 +122,9 @@
         firebase.initializeApp(config);
     </script>
     <!-- js files -->
+    <script>
+        var cha_len = parseInt("{{cha_len}}");
+    </script>
     <script src="../static/js/jquery.js"></script>
     <script src="../static/js/bootstrap.bundle.js"></script>
     <script src="../static/js/material.js"></script>
@@ -131,6 +133,12 @@
     <script>
         $("#slide1").addClass("active");
     </script>
+    {% for t,x in challenge.items(): %}
+    <script>
+        document.getElementById("{{t}}").innerHTML = decodeHTMLEntities("{{x}}");
+        alert(decodeHTMLEntities("{{x}}"));
+    </script>
+    {% endfor %}
 </body>
 
 </html>
