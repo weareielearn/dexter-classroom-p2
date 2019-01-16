@@ -57,14 +57,28 @@ def dexter_ground():
         d_challenges = ChallengeOperations.get_user_dexter_community_challenges(session['dexter_classroom_session']
                                                                                 ['community'][4:])
         return render_template('dexter-ground.html', challenge=d_challenges[ch], c_name=ch, cha_len=len(d_challenges[ch]))
-    return redirect('/dexter-challenges')
+    return redirect('/dexter-box-projects')
 
 
 @app.route('/diy-challenges')
 def diy_challenges():
     if 'dexter_classroom_session' not in session:
         return redirect('/')
-    return render_template('diy-challenges.html')
+    d_challenges = ChallengeOperations.get_user_diy_community_challenges(session['dexter_classroom_session']
+                                                                            ['community'][4:])
+    return render_template('diy-challenges.html', challenges=d_challenges)
+
+
+@app.route('/diy-ground', methods=['POST', 'GET'])
+def diy_ground():
+    if 'dexter_classroom_session' not in session:
+        return redirect('/')
+    if request.method == 'POST':
+        ch = request.form["topic"]
+        d_challenges = ChallengeOperations.get_user_diy_community_challenges(session['dexter_classroom_session']
+                                                                                ['community'][4:])
+        return render_template('diy-ground.html', challenge=d_challenges[ch], c_name=ch, cha_len=len(d_challenges[ch]))
+    return redirect('/diy-challenges')
 
 
 @app.route('/dashboard')

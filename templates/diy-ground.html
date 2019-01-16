@@ -19,34 +19,17 @@
         <main class="mdl-layout__content">
             <div class="page-content">
                 <div class="container mb-5" align="center">
-                    <h1 class="h1 text-center mb-4 pb-2">Dexter Ground</h1>
+                    <h1 class="h1 text-center mb-4 pb-2">DIY Ground</h1>
 
                     <div class="row cwidth">
                         <div class="col-6 p-0" align="left">
                             <button class="mdl-button mdl-button--colored" data-toggle="modal" data-target="#ModalCenter">Quit
-                                project
+                                challenge
                             </button>
                         </div>
-                        <div class="col-6 p-0" align="right">
-                            <div>
-                                <a id="prev" class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect p-0"
-                                    href="#challengeCard" role="button" data-slide="prev">
-                                    <i class="material-icons">
-                                        keyboard_arrow_left
-                                    </i>
-                                </a>
-                                <a id="next" class="mdl-button--accent mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect p-0"
-                                    href="#challengeCard" role="button" data-slide="next">
-                                    <i class="material-icons">
-                                        keyboard_arrow_right
-                                    </i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
-                    <div id="challengeCard" class="mt-4 carousel slide mdl-card mdl-shadow--8dp cwidth p-4" data-wrap="false"
-                        data-interval="false" data-ride="carousel">
-                        <div id="carousel-inner" class="carousel-inner">
+                    <div id="challengeCard" class="mt-4 mdl-card mdl-shadow--8dp cwidth p-4">
+                        <div>
                             {% for t,x in challenge.items(): %}
                             <div id="{{ t }}" class="carousel-item text-left">
                             </div>
@@ -55,16 +38,6 @@
                                 <iframe class="mt-4 mb-4 cwidth_f mx-auto" src="" frameborder="0" allowfullscreen></iframe>
                                 <img class="img-fluid rounded mx-auto d-block" src="">
                             -->
-                            <div id="eval" class="carousel-item">
-                                <h2 class="h2 text-left">Evaluate</h2>
-                                <p class="text-left">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Congratulations on reaching the
-                                    end. Now inorder to test your knowledge and to complete the project, we need to
-                                    evaluate your understanding. Take the evaluation test given below. By the
-                                    end of evaluation your progress will be saved.</p>
-                                <a href="#" class="mdl-button--primary mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Take
-                                    evaluation & finish</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,8 +56,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    You have not completed the project yet and your progress is not saved. Finsih the project to
-                    save your progress. If you go back, you will have to take the project from the beginning.
+                    You have not completed the challenge yet and your progress is not saved. Finsih the challenge to
+                    save your progress. If you go back, you will have to take the challenge from the beginning.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="mdl-button mdl-button--accent" data-dismiss="modal">Cancel</button>
@@ -116,7 +89,7 @@
     <script src="../static/js/jquery.js"></script>
     <script src="../static/js/bootstrap.bundle.js"></script>
     <script src="../static/js/material.js"></script>
-    <script src="../static/js/dexter-ground.js"></script>
+    <script src="../static/js/diy-ground.js"></script>
     <!-- page init -->
     <script>
         $("#slide1").addClass("active");

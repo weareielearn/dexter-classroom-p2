@@ -8,5 +8,10 @@ def get_user_dexter_community_challenges(sub_community):
     return dexter_challenges
 
 
+def get_user_diy_community_challenges(sub_community):
+    diy_challenges = ref_dexter.child('diy/' + sub_community).get()
+    return diy_challenges
+
+
 def admin_create_challenge(ch_name, ch_type, comm, ch):
     challenges = ref_dexter.child(ch_type + '/' + comm + '/' + ch_name).update(ch)

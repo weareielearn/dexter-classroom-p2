@@ -18,10 +18,64 @@
         {% include 'navigation.html' %}
         <main class="mdl-layout__content">
             <div class="page-content">
-                <h1>DIY Challenges</h1>
+                <div class="container mb-5">
+                    <h1 class="h1 text-center">DIY Challenges</h1>
+                    <div class="row">
+                        {% for x in challenges %}
+                        <div class="col-md-4 pr-4 pl-4 pt-4 pb-0">
+                            <!--  -->
+                            <form method="POST" action="./diy-ground" class="mdl-card mdl-shadow--8dp mdl-color--grey w-100">
+                                <div class="mdl-card__title mdl-card--expand">
+                                    <h4 class="h4 mdl-color-text--white">{{ x }}</h4>
+                                    <input class="d-none" name="topic" value="{{ x }}">
+                                </div>
+                                <div class="mdl-card__actions mdl-card--border">
+                                    <button class="text-white mdl-button--raised mdl-button mdl-color--accent mdl-js-button mdl-js-ripple-effect float-right">Take
+                                        Challenge</button>
+                                </div>
+                            </form>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </main>
     </div>
+
+    <!-- <div class="container" style="padding-top: 40px;">
+        <h1 class="h1 pt-4 mb-0 text-center">Dexter Challenges</h1>
+        <div class="row">
+            {% for x in challenges %}
+            <div class="col-md-4 pr-4 pl-4 pt-4 pb-0">
+                <div class="mdl-card mdl-shadow--8dp mdl-color--grey w-100">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h4 class="h4 mdl-color-text--white">{{ x }}</h4>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="text-white mdl-button--raised mdl-button mdl-color--accent mdl-js-button mdl-js-ripple-effect float-right">Take
+                            Challenge</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div> -->
+
+    <!-- firebase init -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyAANPqigBVAXMgbhnT317TYHYEN5fEb_G0",
+            authDomain: "dexter-classroom-p2.firebaseapp.com",
+            databaseURL: "https://dexter-classroom-p2.firebaseio.com",
+            projectId: "dexter-classroom-p2",
+            storageBucket: "dexter-classroom-p2.appspot.com",
+            messagingSenderId: "743944977153"
+        };
+        firebase.initializeApp(config);
+    </script>
     <!-- js files -->
     <script src="../static/js/jquery.js"></script>
     <script src="../static/js/bootstrap.bundle.js"></script>
