@@ -79,7 +79,8 @@ def diy_ground():
         ch = request.form["topic"]
         d_challenges = ChallengeOperations.get_user_diy_community_challenges(session['dexter_classroom_session']
                                                                              ['community'][4:])
-        return render_template('diy-ground.html', challenge=d_challenges[ch], c_name=ch, cha_len=len(d_challenges[ch]))
+        return render_template('diy-ground.html', challenge=d_challenges[ch], c_name=ch, cha_len=len(d_challenges[ch]),
+                               userData=session['dexter_classroom_session'])
     return redirect('/diy-challenges')
 
 
