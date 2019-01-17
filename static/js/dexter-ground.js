@@ -16,6 +16,8 @@ var entities = {
     '#34': '\"'
 }
 var photopath;
+var evaluate = document.getElementById('evaluate');
+var photo = document.getElementById('photo');
 
 next.addEventListener("click", nextClick);
 prev.addEventListener("click", prevClick);
@@ -57,10 +59,26 @@ function decodeHTMLEntities(text) {
     })
 }
 
-$('#photo').change(function (event) {
-    photopath = URL.createObjectURL(event.target.files[0]);
-});
+photo.addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    photopath = new Blob([file]);
+    uploadDexterFile(photopath)
+}, false);
 
-$("#evaluate").click(function () {
-    alert(photopath);
-});
+
+function uploadDexterFile(blob) {
+    var storageRef = firebase.storage().ref();
+    var pic = storageRef.child('feedback/dexter/' + user_community + '/' + user_id + ".jpg");
+    alert("Test1");
+    evaluate.innerHTML = "Uploading..."
+    evaluate.disabled = true;
+    photo.disabled = true;
+    pic.put(blob).then(function (snapshot) {
+        console.log('Uploaded a blob or file!');
+        alert("Test2");
+        evaluate.disabled = false;
+        evaluate.innerHTML = "evaluate & finish"
+        photo.disabled = false;
+    });
+    alert("Test3");
+}

@@ -67,7 +67,7 @@
                                     uploaded anytime within the deadline.
                                 </p>
                                 <form method="GET" action="/test" class="mt-3 mb-3" align="left">
-                                    <label class="d-block mdl-color-text--primary "><b>Upload Project:</b></label>
+                                    <label class="d-block mdl-color-text--accent "><b>Upload Project:</b></label>
                                     <input id="photo" value="" name="photo" type="file" accept=".jpg, .jpeg">
                                 </form>
                                 <button id="evaluate" class="mdl-button--primary mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">evaluate & finish</button>
@@ -105,6 +105,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-storage.js"></script>
     <script>
         var config = {
             apiKey: "AIzaSyAANPqigBVAXMgbhnT317TYHYEN5fEb_G0",
@@ -127,6 +128,8 @@
     <!-- page init -->
     <script>
         $("#slide1").addClass("active");
+        var user_community = "{{ userData['community'][4:] }}";
+        var user_id = "{{ userData['userid'] }}";
     </script>
     {% for t,x in challenge.items(): %}
     <script>
