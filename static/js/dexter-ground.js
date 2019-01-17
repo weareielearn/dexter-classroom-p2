@@ -15,6 +15,7 @@ var entities = {
     'quot': '"',
     '#34': '\"'
 }
+var photopath;
 
 next.addEventListener("click", nextClick);
 prev.addEventListener("click", prevClick);
@@ -55,3 +56,11 @@ function decodeHTMLEntities(text) {
         return entities[entity] || match
     })
 }
+
+$('#photo').change(function (event) {
+    photopath = URL.createObjectURL(event.target.files[0]);
+});
+
+$("#evaluate").click(function () {
+    alert(photopath);
+});
